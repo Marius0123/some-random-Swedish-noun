@@ -93,6 +93,7 @@ select {
     font-family: "Poppins", serif;
     font-weight: var(--normal-font-weight);
     font-style: normal;
+    scroll-behavior: smooth !important;
 }
 
 ::selection {
@@ -228,6 +229,10 @@ select {
         text-transform: capitalize;
     }
 
+    .uppercase {
+        text-transform: uppercase;
+    }
+
     .section_title {
         padding: 5px 0 10px;
         line-height: 1.35;
@@ -308,8 +313,81 @@ select {
 body{
     /* Just for developement { */
     background-color: #fdfdfd;
+    overflow-x: hidden;
     /* } Just for developement */
+    
 }
+
+#loader {
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    /* background: #000 url('https://i.pinimg.com/originals/25/ef/28/25ef280441ad6d3a5ccf89960b4e95eb.gif');
+    background-repeat: no-repeat;
+    background-position: center; */
+    background-color: var(--white);
+}
+
+.loader_wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loader_outer_c {
+    border: 10px solid var(--orange);
+    border-right: none;
+    border-bottom: none;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    width: fit-content;
+    animation: 3s linear normal forwards infinite  loader_outer_c_animation;
+}
+
+
+.loader_inner_c {
+    border: 10px solid var(--orange);
+    border-left: none;
+    border-top: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    animation: 1s linear normal forwards infinite  loader_inner_c_animation;
+}
+
+/* .title_fade_in {
+        opacity: 0;
+        
+    }*/
+
+@keyframes loader_outer_c_animation {
+    0% {
+        opacity: .9;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateZ(-360deg);
+    }
+} 
+
+@keyframes loader_inner_c_animation {
+    0% {
+        opacity: .9;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateZ(360deg);
+    }
+} 
 
 /* main {
     height: 200vh;
@@ -380,4 +458,5 @@ body{
 .get_car_add_wrapper p {
     max-width: 60%;
 }
+
 

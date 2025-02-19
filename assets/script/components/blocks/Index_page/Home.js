@@ -7,6 +7,7 @@ import { PricingCardsList } from "../Pricing_page/PricingCardsList.js";
 import { TestimonialSection } from "../About_page/TestimonialsSection.js";
 import { OurCarsSection } from "./OurCarsSection.js";
 import { FindCarAndStatsSection } from "./FindCarAndStatsSection.js";
+import { NewsletterSection } from "./NewsletterSection.js";
 
 const main = document.querySelector("#main");
 const pageType = document.querySelector("#pageType").value;
@@ -21,6 +22,7 @@ document.querySelector('head').innerHTML += `<link rel="stylesheet" href="${page
 document.querySelector('head').innerHTML += `<link rel="stylesheet" href="${pageType == 'index' ? '' : '.'}./assets/style/mobile-styles/local-style/index.css"> `;
 document.querySelector('head').innerHTML += `<link rel="stylesheet" href="${pageType == 'index' ? '' : '.'}./assets/style/mobile-styles/local-style/pricing.css"> `;
 
+document.querySelector('title').textContent += ` - Acasă`;
 
 
 main.innerHTML = 
@@ -28,6 +30,7 @@ main.innerHTML =
             ${AboutSection}
             ${FindCarAndStatsSection}
             ${StepsSection}
+            ${NewsletterSection}
             ${OurCarsSection}
             ${PricingCardsList}
             ${GetCarAdd}
